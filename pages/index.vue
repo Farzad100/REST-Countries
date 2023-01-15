@@ -2,10 +2,7 @@
   <div>
     <div class="contain">
       <div class="filter-parent">
-        <div class="input-icon-wrap">
-          <span class="input-icon"><span class="fa fa-search" /></span>
-          <input v-model="search" type="text" class="input-with-icon" placeholder="Search for a country...">
-        </div>
+        <search-bar v-model="searchText" />
         <select v-model="region" @change="changeRegion($event)">
           <option value="" selected disabled>
             filter by region
@@ -35,7 +32,7 @@ export default {
   data () {
     return {
       region: '',
-      search: '',
+      searchText: '',
       regions: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
     }
   },
@@ -43,7 +40,7 @@ export default {
     ...mapState(['allCountries']),
     filteredList () {
       return this.allCountries.filter((country) => {
-        return country.name.toLowerCase().includes(this.search.toLowerCase())
+        return country.name.toLowerCase().includes(this.searchText.toLowerCase())
       })
     }
 
@@ -79,44 +76,14 @@ select {
     color: #666;
     font-size: 14px;
 }
-.input-icon-wrap {
-  box-shadow: 2px 2px 8px rgb(219 207 207 / 96%);
-  display: flex;
-  flex-direction: row;
-  width: 30%;
-  border-radius: 7px;
-    overflow: hidden;
-}
-.fa {
-  color: #999;
-}
-
-.input-with-icon {
-  border: none;
-    flex: 1;
-    outline: none;
-    font-size: 14px;
-    color: #666;
-}
-
-.input-icon, .input-with-icon {
-  padding: 14px;
-}
 
 @media only screen and (max-width: 768px) {
   .filter-parent {
     flex-direction: column;
     align-items: flex-start;
   }
-  .input-icon-wrap {
-    margin-bottom: 30px;
-    width: 94%;
-  }
   select {
     width: 55%;
-    padding: 18px;
-  }
-  .input-with-icon {
     padding: 18px;
   }
 }
