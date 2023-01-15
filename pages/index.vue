@@ -3,14 +3,7 @@
     <div class="contain">
       <div class="filter-parent">
         <search-bar v-model="searchText" />
-        <select v-model="region" @change="changeRegion($event)">
-          <option value="" selected disabled>
-            filter by region
-          </option>
-          <option v-for="regionData in regions" :key="regionData" :value="regionData">
-            {{ regionData }}
-          </option>
-        </select>
+        <select-region v-model="selectRegion" @input="changeRegion(selectRegion)" />
       </div>
     </div>
     <div class="contain">
@@ -31,9 +24,8 @@ export default {
   name: 'IndexPage',
   data () {
     return {
-      region: '',
-      searchText: '',
-      regions: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+      selectRegion: '',
+      searchText: ''
     }
   },
   computed: {
@@ -46,8 +38,8 @@ export default {
 
   },
   methods: {
-    async changeRegion (event) {
-      await this.$store.dispatch('getCountriesByRegion', event.target.value.toLowerCase())
+    async changeRegion (selectRegion) {
+      await this.$store.dispatch('getCountriesByRegion', selectRegion.toLowerCase())
     }
   }
 }
@@ -66,25 +58,10 @@ export default {
     display: contents;
 }
 
-select {
-  outline: none;
-  box-shadow: 2px 2px 8px rgb(219 207 207 / 96%);
-    border: none;
-    width: 20%;
-    padding: 15px 20px;
-    border-radius: 7px;
-    color: #666;
-    font-size: 14px;
-}
-
 @media only screen and (max-width: 768px) {
   .filter-parent {
     flex-direction: column;
     align-items: flex-start;
-  }
-  select {
-    width: 55%;
-    padding: 18px;
   }
 }
 
