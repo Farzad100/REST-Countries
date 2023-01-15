@@ -24,14 +24,6 @@ export const actions = {
       })
       .catch(e => context.error(e))
   },
-  async getCountries (vuexContext, context) {
-    return await context.app.$axios
-      .$get('/all')
-      .then((data) => {
-        vuexContext.commit('setCountries', data)
-      })
-      .catch(e => context.error(e))
-  },
   getSearch (vuexContext, context) {
     vuexContext.commit('setCountries', context)
   },
