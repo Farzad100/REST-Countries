@@ -34,9 +34,12 @@ export default {
     font-family: 'Nunito Sans', sans-serif;
     user-select: none;
 }
+body {
+  transition: all .4s linear;
+}
 header {
     width: 100%;
-    box-shadow: 1px 1px 12px #dddbdb;
+    box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
     min-height: 60px;
     line-height: 60px;
 }
@@ -57,11 +60,12 @@ header {
     margin-top: 35px;
 }
 .dark-mode {
-  background-color: black !important;
-  color: white !important;
+  transition: all .4s linear;
+  background-color: #333;
+  color: white;
 }
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .4s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

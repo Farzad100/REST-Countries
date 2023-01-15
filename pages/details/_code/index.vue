@@ -1,9 +1,9 @@
 <template>
   <div class="contain">
     <div class="filter-parent">
-      <button class="button" @click.prevent="goBack">
+      <span class="button" @click="goBack">
         Back
-      </button>
+      </span>
     </div>
     <div class="country">
       <div class="picture">
@@ -121,14 +121,14 @@ export default {
     margin-right: 12px;
 }
 .button {
-  box-shadow: 2px 2px 8px rgb(55 37 37 / 35%);
+  box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
     border: none;
     padding: 12px 20px;
     outline: none;
     width: 13%;
     border-radius: 7px;
     font-weight: 500;
-    background: none;
+    text-align: center;
 }
 .card .details {
     margin: 0;

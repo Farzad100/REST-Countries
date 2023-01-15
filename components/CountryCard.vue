@@ -43,7 +43,7 @@ export default {
 
 .card {
     width: 21%;
-    box-shadow: 2px 2px 20px #7d787870;
+    box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
     margin-top: 50px;
     border-radius: 5px;
     overflow: hidden;

@@ -37,13 +37,14 @@ export default {
 <style scoped>
 select {
     outline: none;
-    box-shadow: 2px 2px 8px rgb(219 207 207 / 96%);
+    box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
     border: none;
     width: 20%;
     padding: 15px 20px;
     border-radius: 7px;
     color: #666;
     font-size: 14px;
+    background: none;
 }
 @media only screen and (max-width: 768px) {
   select {

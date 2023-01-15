@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .input-icon-wrap {
-  box-shadow: 2px 2px 8px rgb(219 207 207 / 96%);
+  box-shadow: 1px 1px 12px rgb(0 0 0 / 20%);
   display: flex;
   flex-direction: row;
   width: 30%;
@@ -47,6 +47,7 @@ export default {
     outline: none;
     font-size: 14px;
     color: #666;
+    background: none;
 }
 
 .input-icon, .input-with-icon {
